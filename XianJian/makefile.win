@@ -1,0 +1,115 @@
+# Project: XianJian
+# Makefile created by Red Panda C++ 3.3.3147
+
+CXX      = "g++.exe"
+CC       = "gcc.exe"
+WINDRES  = "windres.exe"
+RM       = del /q /f
+CD       = cd /d
+LIBS     = "-LC:/Program Files/OpenSSL-Win64/lib/VC" "-Wl,--stack,12582912" "-s" "-static"
+INCS     = "-IC:/Program Files/OpenSSL-Win64/include" "-ID:/C++ Python Scratch/桌面编程有关/avatar_2026.10/2026.10.16/xianjianqixiazhuan/XianJian/src"
+CXXINCS  = "-ID:/C++ Python Scratch/桌面编程有关/avatar_2026.10/2026.10.16/xianjianqixiazhuan/XianJian/src"
+CXXFLAGS = $(CXXINCS) "-O2" "-std=c++14" "-pipe" "-Wextra"
+CFLAGS   = $(INCS) "-std=c11" "-O2" "-pipe" "-Wextra"
+WINDRESFLAGS = 
+RES      = XianJian_private.res
+OBJ      = src/save/save.o src/ui/status.o src/data/quests.o src/map/map_coords.o src/settings/settings.o src/main.o src/ui/menu.o src/data/monsters.o src/entity/bag.o src/map/map.o src/data/achievements.o src/ui/item_query.o src/ui/update_log.o src/ui/shop.o src/core/globals.o src/entity/player.o src/map/explore.o src/battle/battle.o src/ui/achievements_ui.o src/core/utils.o src/data/classes.o src/event/random_event.o src/ui/auction.o src/data/items.o src/ui/forging.o src/ui/bag_ui.o src/entity/stats.o $(RES)
+BIN      = XianJian.exe
+LINKOBJ  = "src/save/save.o" "src/ui/status.o" "src/data/quests.o" "src/map/map_coords.o" "src/settings/settings.o" "src/main.o" "src/ui/menu.o" "src/data/monsters.o" "src/entity/bag.o" "src/map/map.o" "src/data/achievements.o" "src/ui/item_query.o" "src/ui/update_log.o" "src/ui/shop.o" "src/core/globals.o" "src/entity/player.o" "src/map/explore.o" "src/battle/battle.o" "src/ui/achievements_ui.o" "src/core/utils.o" "src/data/classes.o" "src/event/random_event.o" "src/ui/auction.o" "src/data/items.o" "src/ui/forging.o" "src/ui/bag_ui.o" "src/entity/stats.o" "XianJian_private.res"
+CLEANOBJ = "src\save\save.o" "src\ui\status.o" "src\data\quests.o" "src\map\map_coords.o" "src\settings\settings.o" "src\main.o" "src\ui\menu.o" "src\data\monsters.o" "src\entity\bag.o" "src\map\map.o" "src\data\achievements.o" "src\ui\item_query.o" "src\ui\update_log.o" "src\ui\shop.o" "src\core\globals.o" "src\entity\player.o" "src\map\explore.o" "src\battle\battle.o" "src\ui\achievements_ui.o" "src\core\utils.o" "src\data\classes.o" "src\event\random_event.o" "src\ui\auction.o" "src\data\items.o" "src\ui\forging.o" "src\ui\bag_ui.o" "src\entity\stats.o" "XianJian_private.res" "XianJian.exe"
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	-$(RM) $(CLEANOBJ) >NUL 2>&1
+
+XianJian.exe: $(OBJ)
+
+	$(CXX) $(LINKOBJ) -o "XianJian.exe" $(LIBS)
+
+src/save/save.o: src/save/save.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/save/save.cpp" -o "src/save/save.o" $(CXXFLAGS) 
+
+src/ui/status.o: src/ui/status.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/ui/status.cpp" -o "src/ui/status.o" $(CXXFLAGS) 
+
+src/data/quests.o: src/data/quests.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/data/quests.cpp" -o "src/data/quests.o" $(CXXFLAGS) 
+
+src/map/map_coords.o: src/map/map_coords.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/map/map_coords.cpp" -o "src/map/map_coords.o" $(CXXFLAGS) 
+
+src/settings/settings.o: src/settings/settings.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/settings/settings.cpp" -o "src/settings/settings.o" $(CXXFLAGS) 
+
+src/main.o: src/main.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/main.cpp" -o "src/main.o" $(CXXFLAGS) 
+
+src/ui/menu.o: src/ui/menu.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/ui/menu.cpp" -o "src/ui/menu.o" $(CXXFLAGS) 
+
+src/data/monsters.o: src/data/monsters.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/data/monsters.cpp" -o "src/data/monsters.o" $(CXXFLAGS) 
+
+src/entity/bag.o: src/entity/bag.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/entity/bag.cpp" -o "src/entity/bag.o" $(CXXFLAGS) 
+
+src/map/map.o: src/map/map.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/map/map.cpp" -o "src/map/map.o" $(CXXFLAGS) 
+
+src/data/achievements.o: src/data/achievements.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/data/achievements.cpp" -o "src/data/achievements.o" $(CXXFLAGS) 
+
+src/ui/item_query.o: src/ui/item_query.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/ui/item_query.cpp" -o "src/ui/item_query.o" $(CXXFLAGS) 
+
+src/ui/update_log.o: src/ui/update_log.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/ui/update_log.cpp" -o "src/ui/update_log.o" $(CXXFLAGS) 
+
+src/ui/shop.o: src/ui/shop.cpp src/entity/bag.h src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/classes.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/save/save.h src/data/items.h src/data/achievements.h src/settings/settings.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/ui/shop.cpp" -o "src/ui/shop.o" $(CXXFLAGS) 
+
+src/core/globals.o: src/core/globals.cpp src/core/globals.h src/core/types.h src/data/classes.h src/data/quests.h src/data/monsters.h src/data/items.h src/data/achievements.h src/entity/player.h
+	$(CXX) -c "src/core/globals.cpp" -o "src/core/globals.o" $(CXXFLAGS) 
+
+src/entity/player.o: src/entity/player.cpp src/entity/stats.h src/core/utils.h src/core/globals.h src/core/types.h src/data/classes.h src/data/items.h src/entity/player.h
+	$(CXX) -c "src/entity/player.cpp" -o "src/entity/player.o" $(CXXFLAGS) 
+
+src/map/explore.o: src/map/explore.cpp src/event/random_event.h src/entity/stats.h src/map/map.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/map/map_coords.h src/data/quests.h src/data/monsters.h src/data/items.h src/data/achievements.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/map/explore.cpp" -o "src/map/explore.o" $(CXXFLAGS) 
+
+src/battle/battle.o: src/battle/battle.cpp src/entity/stats.h src/core/utils.h src/core/globals.h src/core/types.h src/data/classes.h src/data/quests.h src/data/monsters.h src/data/items.h src/data/achievements.h src/battle/battle.h src/entity/player.h
+	$(CXX) -c "src/battle/battle.cpp" -o "src/battle/battle.o" $(CXXFLAGS) 
+
+src/ui/achievements_ui.o: src/ui/achievements_ui.cpp src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/quests.h src/data/achievements.h src/entity/player.h
+	$(CXX) -c "src/ui/achievements_ui.cpp" -o "src/ui/achievements_ui.o" $(CXXFLAGS) 
+
+src/core/utils.o: src/core/utils.cpp src/core/utils.h src/core/globals.h src/core/types.h src/data/items.h
+	$(CXX) -c "src/core/utils.cpp" -o "src/core/utils.o" $(CXXFLAGS) 
+
+src/data/classes.o: src/data/classes.cpp src/core/globals.h src/core/types.h src/data/classes.h
+	$(CXX) -c "src/data/classes.cpp" -o "src/data/classes.o" $(CXXFLAGS) 
+
+src/event/random_event.o: src/event/random_event.cpp src/event/random_event.h src/entity/stats.h src/core/utils.h src/core/globals.h src/core/types.h src/data/items.h src/data/achievements.h src/entity/player.h
+	$(CXX) -c "src/event/random_event.cpp" -o "src/event/random_event.o" $(CXXFLAGS) 
+
+src/ui/auction.o: src/ui/auction.cpp src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/items.h src/data/achievements.h src/entity/player.h
+	$(CXX) -c "src/ui/auction.cpp" -o "src/ui/auction.o" $(CXXFLAGS) 
+
+src/data/items.o: src/data/items.cpp src/core/utils.h src/core/globals.h src/core/types.h src/data/items.h
+	$(CXX) -c "src/data/items.cpp" -o "src/data/items.o" $(CXXFLAGS) 
+
+src/ui/forging.o: src/ui/forging.cpp src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/quests.h src/data/items.h src/data/achievements.h src/entity/player.h
+	$(CXX) -c "src/ui/forging.cpp" -o "src/ui/forging.o" $(CXXFLAGS) 
+
+src/ui/bag_ui.o: src/ui/bag_ui.cpp src/entity/stats.h src/core/utils.h src/core/globals.h src/core/types.h src/ui/ui.h src/data/items.h src/entity/player.h
+	$(CXX) -c "src/ui/bag_ui.cpp" -o "src/ui/bag_ui.o" $(CXXFLAGS) 
+
+src/entity/stats.o: src/entity/stats.cpp src/entity/stats.h src/core/globals.h src/core/types.h src/data/items.h src/entity/player.h
+	$(CXX) -c "src/entity/stats.cpp" -o "src/entity/stats.o" $(CXXFLAGS) 
+
+XianJian_private.res: XianJian_private.rc 
+	$(WINDRES) -i "XianJian_private.rc" --input-format=rc -o "XianJian_private.res" -O coff $(WINDRESFLAGS) 
+
